@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MyTestApplication</string>
+
+    <string name="user_label">USER LIST</string>
+    <string name="default_user_name">user_name</string>
+    <string name="default_money_val">0.0</string>
+
 </resources>
