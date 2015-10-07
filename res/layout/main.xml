@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:weightSum="1">
-    <TextView
-            android:id="@+id/user_label"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="user_lable"
-            />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+        >
 
-    <ListView
-            android:id="@+id/user_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-</LinearLayout>
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:id="@+id/mainLayout"
+                  android:weightSum="1">
+        <TextView
+                android:id="@+id/userLabel"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:text="user_lable"
+                />
 
+        <ListView
+                android:id="@+id/user_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:clickable="false"
+                android:layout_marginBottom="60dp"/>
+    </LinearLayout>
+
+    <!--<Button android:id="@+id/btnGetMoreResults"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:text="Get more"-->
+            <!--android:layout_alignParentBottom="true" />-->
+
+    <include layout="@layout/footer_layout"/>
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/footer_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+    android:layout_gravity="center" android:layout_weight="29.36"
+        android:layout_alignParentBottom="true"
+        >
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp" android:gravity="center_horizontal">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calc_button_text"
+                android:background="@drawable/button_shape"
+                android:id="@+id/calcButton"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pay_button_text"
+                android:background="@drawable/button_shape"
+                android:id="@+id/payButton" android:layout_marginLeft="60dp"/>
+    </LinearLayout>
+</LinearLayout>
