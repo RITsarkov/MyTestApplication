@@ -14,25 +14,22 @@ public class TestApplicationActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
-        uAdaper = new UserAdapter(getApplicationContext());
-
         userListView = (ListView) findViewById(R.id.user_list);
 
+        uAdaper = new UserAdapter(getApplicationContext());
         userListView.setAdapter(uAdaper);
         generatUserList();
     }
 
-
     //todo: заглушка
     private void generatUserList(){
         uAdaper.addUser(new User("Вася").setMoney(100F));
-        uAdaper.addUser(new User("Петя").setMoney(100F));
-        uAdaper.addUser(new User("Катя").setMoney(100F));
-        uAdaper.addUser(new User("Маша").setMoney(100F));
-        uAdaper.addUser(new User("Толя").setMoney(100F));
-        uAdaper.addUser(new User("Рома").setMoney(100F));
-        uAdaper.addUser(new User("Олег").setMoney(100F));
+        uAdaper.addUser(new User("Петя").setMoney(50F));
+        uAdaper.addUser(new User("Катя").setMoney(0F));
+        uAdaper.addUser(new User("Маша").setMoney(300F));
+        uAdaper.addUser(new User("Толя").setMoney(0F));
+        uAdaper.addUser(new User("Рома").setMoney(20F));
+//        uAdaper.addUser(new User("Олег").setMoney(40F));
     }
 
 

@@ -5,5 +5,7 @@
     <string name="user_label">USER LIST</string>
     <string name="default_user_name">user_name</string>
     <string name="default_money_val">0.0</string>
+    <string name="pay_button_text">pay!</string>
+    <string name="calc_button_text">calc</string>
 
 </resources>
