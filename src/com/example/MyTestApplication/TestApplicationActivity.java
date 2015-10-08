@@ -2,6 +2,8 @@ package com.example.MyTestApplication;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import com.example.MyTestApplication.DataObj.User;
 
@@ -18,8 +20,18 @@ public class TestApplicationActivity extends Activity {
 
         uAdaper = new UserAdapter(getApplicationContext());
         userListView.setAdapter(uAdaper);
+        userListView.setOnItemClickListener(selectUserOnItemClickListener);
+
         generatUserList();
     }
+
+    AdapterView.OnItemClickListener selectUserOnItemClickListener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position,
+                                long id) {
+            uAdaper.setSelectedUser(position);
+        }
+    };
 
     //todo: заглушка
     private void generatUserList(){
