@@ -1,6 +1,8 @@
 package com.example.MyTestApplication;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +19,17 @@ public class UserAdapter extends BaseAdapter {
 
     private final Context mContext;
     List<User> userList = new ArrayList<>();
+    private int newSelectedUserId = 0;
 
     UserAdapter(Context context){
         mContext = context;
+    }
+
+    public void setSelectedUser(int position){
+        if (newSelectedUserId != position) {
+            newSelectedUserId = position;
+            notifyDataSetChanged();
+        }
     }
 
     public void addUser(User user){
@@ -58,6 +68,33 @@ public class UserAdapter extends BaseAdapter {
         TextView userMoney  = (TextView) userRow.findViewById(R.id.user_money);
         userMoney.setText(user.getMoney().toString());
 
+        //Отрисовывать выбранного пользователя другим цветом
+        markSelectedUser(userRow, position);
         return userRow;
     }
+
+    private void markSelectedUser(final View userRow, int position){
+        if (position == newSelectedUserId){
+        // Цвет и так можно получать: Color.parseColor("#FF0000");
+            userRow.setBackgroundResource(R.drawable.new_state);
+        }
+        else
+        // Это прозрачный бекграунд.
+            userRow.setBackgroundColor(0x00000000);
+    }
+
+
+    //todo  это пока для эксперимента с анимацией
+    private void animationForSelectedUser(final View userRow){
+        ValueAnimator anim = ValueAnimator.ofInt(Color.parseColor("#000000"), Color.parseColor("#FF0000"));
+        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                userRow.setBackgroundColor((Integer) animation.getAnimatedValue());
+            }
+        });
+        anim.setDuration(1000);
+    }
+
+
 }
